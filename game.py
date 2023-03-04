@@ -1,5 +1,8 @@
 import os,queue,random,sys,threading,time
 from pynput.keyboard import Listener
+
+import webbrowser
+
 #变量定义
 loop=True
 a=[]
@@ -39,6 +42,20 @@ def press(key):
 def cleanprint():
     os.system('cls')
 
+
+
+
+def start():
+    for i in range(38):
+        cleanprint()
+        print('*'* i,end='')
+        print('\nby若流之上')
+        print('https://space.bilibili.com/1538929699')
+        print('*'*i)
+        time.sleep(0.2)
+
+    webbrowser.open('https://space.bilibili.com/1538929699')
+    time.sleep(2)
 
 listener=Listener(on_press=press)
 listener.start()
@@ -233,7 +250,7 @@ if os.path.exists('save')==False:
 
 
 
-
+start()
 
 
 
